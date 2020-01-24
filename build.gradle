@@ -21,8 +21,8 @@ apply plugin: 'kotlin-kapt'
 if (new File('local.gradle').exists())
     apply from: 'local.gradle'
 
-group 'kr.heartpattern'
-version '4.0.0-SNAPSHOT'
+group = 'kr.heartpattern'
+version = '4.0.0-SNAPSHOT'
 
 repositories {
     maven {
@@ -43,6 +43,9 @@ dependencies {
     compileOnly 'kr.heartpattern:Spikot:4.0.0-SNAPSHOT'
     compileOnly 'org.spigotmc:spigot:1.5.2-R1.1-SNAPSHOT'
     compileOnly 'org.spigotmc:plugin-annotations:1.1.0-SNAPSHOT'
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
 
     kapt "org.spigotmc:plugin-annotations:1.1.0-SNAPSHOT"
     kapt "kr.heartpattern:SpikotClassLocator:4.0.0-SNAPSHOT"
