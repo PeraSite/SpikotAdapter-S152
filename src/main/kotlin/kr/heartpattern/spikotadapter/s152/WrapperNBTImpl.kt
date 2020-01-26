@@ -294,7 +294,7 @@ class WrapperNBTCompoundImpl(override val tag: NBTTagCompound) : WrapperNBTCompo
     }
 
     override fun hasKeyOfType(key: String, type: TagType<*>): Boolean {
-        throw UnsupportedOperationException("There is no NBTTagCompound#hasKeyOfType(String, TagType<?>) in 1.5.2")
+        return tag.hasKey(key)
     }
 
     override fun hasUUID(key: String): Boolean {
