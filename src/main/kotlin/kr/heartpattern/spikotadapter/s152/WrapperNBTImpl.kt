@@ -3,8 +3,6 @@ package kr.heartpattern.spikotadapter.s152
 import kr.heartpattern.spikot.adapters.NBTAdapter
 import kr.heartpattern.spikot.nbt.*
 import net.minecraft.server.v1_5_R3.*
-import java.lang.UnsupportedOperationException
-import java.lang.reflect.Field
 import java.util.*
 
 class WrapperNBTEndImpl : WrapperNBTEnd {

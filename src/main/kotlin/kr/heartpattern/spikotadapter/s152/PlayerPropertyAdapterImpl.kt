@@ -18,33 +18,33 @@ import kotlin.collections.HashMap
 @Adapter
 @SupportedVersion(version = "all")
 class PlayerPropertyAdapterImpl : AbstractModule(), PlayerPropertyAdapter {
-    private val map = HashMap<UUID, MutablePropertyMap>()
+    private val map = HashMap<String, MutablePropertyMap>()
 
     override fun contains(player: Player, property: Property<*>): Boolean {
-        return property in map[player.uniqueId]!!
+        return property in map[player.name]!!
     }
 
     override fun <T> get(player: Player, property: Property<T>): T {
-        return map[player.uniqueId]!![property]!!
+        return map[player.name]!![property]!!
     }
 
     override fun <T> remove(player: Player, property: MutableProperty<T>): T? {
-        val old = map[player.uniqueId]!![property]
-        map[player.uniqueId]!![property] = null
+        val old = map[player.name]!![property]
+        map[player.name]!![property] = null
         return old
     }
 
     override fun <T> set(player: Player, property: MutableProperty<T>, value: T?) {
-        map[player.uniqueId]!![property] = value
+        map[player.name]!![property] = value
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     fun PlayerJoinEvent.onPlayerJoin() {
-        map[player.uniqueId] = MutablePropertyMap()
+        map[player.name] = MutablePropertyMap()
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
     fun PlayerQuitEvent.onPlayerQuit() {
-        map.remove(player.uniqueId)
+        map.remove(player.name)
     }
 }
