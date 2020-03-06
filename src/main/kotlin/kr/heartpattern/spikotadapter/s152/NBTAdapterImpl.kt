@@ -11,7 +11,7 @@ import java.io.ByteArrayOutputStream
 import java.lang.UnsupportedOperationException
 
 @Adapter
-@SupportedVersion(version = "all")
+@SupportedVersion("1.5.2")
 class NBTAdapterImpl : AbstractModule(), NBTAdapter {
     private val nbtTagEnd: NBTTagEnd
 

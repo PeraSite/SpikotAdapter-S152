@@ -16,7 +16,7 @@ import java.util.*
 import kotlin.collections.HashMap
 
 @Adapter
-@SupportedVersion(version = "all")
+@SupportedVersion(version = "1.5.2")
 class PlayerPropertyAdapterImpl : AbstractModule(), PlayerPropertyAdapter {
     private val map = HashMap<String, MutablePropertyMap>()
 

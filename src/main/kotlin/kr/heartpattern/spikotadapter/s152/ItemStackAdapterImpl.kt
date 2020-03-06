@@ -12,7 +12,7 @@ import org.bukkit.craftbukkit.v1_5_R3.inventory.CraftItemStack
 import java.lang.reflect.Field
 
 @Adapter
-@SupportedVersion("all")
+@SupportedVersion("1.5.2")
 class ItemStackAdapterImpl : AbstractModule(), ItemStackAdapter {
     private companion object {
         val handleField: Field = CraftItemStack::class.java.getDeclaredField("handle")
